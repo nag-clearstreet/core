@@ -1,5 +1,39 @@
 # @module-federation/storybook-addon
 
+## 5.0.3
+
+### Patch Changes
+
+- @module-federation/enhanced@0.22.1
+- @module-federation/sdk@0.22.1
+
+## 5.0.2
+
+### Patch Changes
+
+- a1c1c51: prefer use `stroybook/internal/node-logger` as logger
+  - @module-federation/enhanced@0.22.0
+  - @module-federation/sdk@0.22.0
+
+## 5.0.1
+
+### Patch Changes
+
+- @module-federation/enhanced@0.21.6
+- @module-federation/sdk@0.21.6
+
+## 5.0.0
+
+### Major Changes
+
+- 64840dd: only ship ESM outputs, align with Storybook 10.
+
+### Patch Changes
+
+- Updated dependencies [94d8868]
+  - @module-federation/sdk@0.21.5
+  - @module-federation/enhanced@0.21.5
+
 ## 4.0.36
 
 ### Patch Changes

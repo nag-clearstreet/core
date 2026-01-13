@@ -161,7 +161,7 @@ const mfSSRRsbuildPlugin = (
             ? pluginOptions.userConfig.ssr
             : {}
           : {};
-        if (userSSRConfig.distOutputDir) {
+        if (!userSSRConfig.distOutputDir) {
           return;
         }
         config.output!.publicPath = `${config.output!.publicPath}${path.relative(csrOutputPath, ssrOutputPath)}/`;
@@ -293,17 +293,6 @@ export const moduleFederationSSRPlugin = (
           chain
             .plugin('UniverseEntryChunkTrackerPlugin')
             .use(UniverseEntryChunkTrackerPlugin);
-        }
-        const userSSRConfig = pluginOptions.userConfig.ssr
-          ? typeof pluginOptions.userConfig.ssr === 'object'
-            ? pluginOptions.userConfig.ssr
-            : {}
-          : {};
-        const publicPath = chain.output.get('publicPath');
-        if (userSSRConfig.distOutputDir && publicPath) {
-          chain.output.publicPath(
-            `${publicPath}${userSSRConfig.distOutputDir}/`,
-          );
         }
       }
 

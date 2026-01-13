@@ -1,5 +1,39 @@
 # @module-federation/rsbuild-plugin
 
+## 0.22.1
+
+### Patch Changes
+
+- @module-federation/enhanced@0.22.1
+- @module-federation/sdk@0.22.1
+- @module-federation/node@2.7.27
+
+## 0.22.0
+
+### Patch Changes
+
+- @module-federation/enhanced@0.22.0
+- @module-federation/sdk@0.22.0
+- @module-federation/node@2.7.26
+
+## 0.21.6
+
+### Patch Changes
+
+- b307ae0: fix(rsbuild-plugin): create different temp filepath to prevent invalid manifest.exposes
+  - @module-federation/enhanced@0.21.6
+  - @module-federation/sdk@0.21.6
+  - @module-federation/node@2.7.25
+
+## 0.21.5
+
+### Patch Changes
+
+- Updated dependencies [94d8868]
+  - @module-federation/sdk@0.21.5
+  - @module-federation/enhanced@0.21.5
+  - @module-federation/node@2.7.24
+
 ## 0.21.4
 
 ### Patch Changes

@@ -1,5 +1,61 @@
 # @module-federation/modern-js
 
+## 0.22.1
+
+### Patch Changes
+
+- @module-federation/runtime@0.22.1
+- @module-federation/enhanced@0.22.1
+- @module-federation/sdk@0.22.1
+- @module-federation/bridge-react@0.22.1
+- @module-federation/rsbuild-plugin@0.22.1
+- @module-federation/cli@0.22.1
+- @module-federation/node@2.7.27
+
+## 0.22.0
+
+### Minor Changes
+
+- 90c6a40: fix(modernjs)!: ship .mjs files for correct ESM output
+
+### Patch Changes
+
+- 6e27880: fix(modern-js-plugin): handle distOutputDir for SSR and web targets differently
+  - @module-federation/runtime@0.22.0
+  - @module-federation/enhanced@0.22.0
+  - @module-federation/sdk@0.22.0
+  - @module-federation/bridge-react@0.22.0
+  - @module-federation/rsbuild-plugin@0.22.0
+  - @module-federation/cli@0.22.0
+  - @module-federation/node@2.7.26
+
+## 0.21.6
+
+### Patch Changes
+
+- Updated dependencies [b307ae0]
+  - @module-federation/rsbuild-plugin@0.21.6
+  - @module-federation/runtime@0.21.6
+  - @module-federation/enhanced@0.21.6
+  - @module-federation/sdk@0.21.6
+  - @module-federation/bridge-react@0.21.6
+  - @module-federation/cli@0.21.6
+  - @module-federation/node@2.7.25
+
+## 0.21.5
+
+### Patch Changes
+
+- Updated dependencies [35c3695]
+- Updated dependencies [94d8868]
+  - @module-federation/cli@0.21.5
+  - @module-federation/sdk@0.21.5
+  - @module-federation/enhanced@0.21.5
+  - @module-federation/bridge-react@0.21.5
+  - @module-federation/node@2.7.24
+  - @module-federation/rsbuild-plugin@0.21.5
+  - @module-federation/runtime@0.21.5
+
 ## 0.21.4
 
 ### Patch Changes
