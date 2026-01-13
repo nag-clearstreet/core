@@ -212,16 +212,10 @@ export const DEFAULT_SHARE_SCOPE_BROWSER: moduleFederationPlugin.SharedObject =
   Object.entries(DEFAULT_SHARE_SCOPE).reduce((acc, item) => {
     const [key, value] = item as [string, moduleFederationPlugin.SharedConfig];
 
-    // Critical modules that need eager loading to ensure proper context initialization
-    // These modules must be loaded synchronously before any async chunks to prevent
-    // "NextRouter was not mounted" and similar context-related errors in Next.js 15+
-    const eagerModules = [
-      'react',
-      'react-dom',
-      'next/router',
-      'next/compat/router',
-      'next/link',
-    ];
+    // Next.js router modules need eager loading to ensure proper context initialization
+    // This prevents "NextRouter was not mounted" errors in Next.js 15+
+    // Note: react/react-dom should NOT be eager as it breaks React 19's initialization
+    const eagerModules = ['next/router', 'next/compat/router'];
     const shouldBeEager = eagerModules.includes(key);
 
     acc[key] = {
