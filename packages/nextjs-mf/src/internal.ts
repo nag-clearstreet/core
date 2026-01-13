@@ -153,22 +153,30 @@ export const DEFAULT_SHARE_SCOPE: moduleFederationPlugin.SharedObject = {
   react: {
     singleton: true,
     requiredVersion: false,
-    import: false,
+    import: undefined,
+    eager: true,
   },
   'react/': {
     singleton: true,
     requiredVersion: false,
-    import: false,
+    import: undefined,
   },
   'react-dom/': {
     singleton: true,
     requiredVersion: false,
-    import: false,
+    import: undefined,
   },
   'react-dom': {
     singleton: true,
     requiredVersion: false,
-    import: false,
+    import: undefined,
+    eager: true,
+  },
+  'react-dom/client': {
+    singleton: true,
+    requiredVersion: false,
+    import: undefined,
+    eager: true,
   },
   'react/jsx-dev-runtime': {
     singleton: true,
@@ -177,6 +185,13 @@ export const DEFAULT_SHARE_SCOPE: moduleFederationPlugin.SharedObject = {
   'react/jsx-runtime': {
     singleton: true,
     requiredVersion: false,
+  },
+  // Scheduler is required for React 19 compatibility - react-dom depends on it
+  scheduler: {
+    singleton: true,
+    requiredVersion: false,
+    import: undefined,
+    eager: true,
   },
   'styled-jsx': {
     singleton: true,
@@ -214,9 +229,16 @@ export const DEFAULT_SHARE_SCOPE_BROWSER: moduleFederationPlugin.SharedObject =
 
     // Next.js router modules need eager loading to ensure proper context initialization
     // This prevents "NextRouter was not mounted" errors in Next.js 15+
-    // Note: react/react-dom should NOT be eager as it breaks React 19's initialization
-    const eagerModules = ['next/router', 'next/compat/router'];
-    const shouldBeEager = eagerModules.includes(key);
+    // React, react-dom, and scheduler also need eager loading for React 19 compatibility
+    const eagerModules = [
+      'react',
+      'react-dom',
+      'react-dom/client',
+      'scheduler',
+      'next/router',
+      'next/compat/router',
+    ];
+    const shouldBeEager = eagerModules.includes(key) || value.eager === true;
 
     acc[key] = {
       ...value,
